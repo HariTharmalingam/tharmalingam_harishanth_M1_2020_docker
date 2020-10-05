@@ -61,7 +61,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    'mongodb://localhost:27017/docker', {useNewUrlParser: true}
+    'mongodb://mongo/docker', {useNewUrlParser: true}
   )
   .then(result => {
     app.listen(8080);

@@ -1,6 +1,6 @@
 FROM node:10
-WORKDIR /backend
-COPY . /backend/
+WORKDIR /client
+COPY . /client/
 RUN npm install
-EXPOSE 8080
+EXPOSE 3000
 CMD [ "npm", "start" ]

@@ -3,7 +3,7 @@ version: "3"
 services:
   backend:
     container_name: server
-    build: backend
+    build: server
     ports:
       - "8080:8080"
     depends_on:
@@ -15,9 +15,12 @@ services:
         - 27017
     ports:
       - 27017:27017
-
+  mongo_auth:
+    build: ./mongo_auth
+    depends_on:
+        - mongodb
   frontend:
     container_name: client
-    build: frontend
+    build: client
     ports:
-      - "3000:3000"
+      - "3001:3001"
